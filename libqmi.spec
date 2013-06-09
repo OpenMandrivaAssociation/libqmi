@@ -47,13 +47,12 @@ This package contains files required to link sources against libqmi.
 
 %build
 %configure2_5x \
-    --disable-static
+	--disable-static
 
 %make
 
 %install
 %makeinstall_std
-find %{buildroot}%{_libdir} -type f -name '*.la' -delete -print
 
 %files -n %{oname}-tools
 %{_bindir}/qmi-network
