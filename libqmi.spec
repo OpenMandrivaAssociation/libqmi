@@ -14,6 +14,7 @@ Source0:	http://cgit.freedesktop.org/libqmi/snapshot/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
+BuildRequires:	pkgconfig(gtk-doc)
 
 %description
 A GLib/GIO based library to control QMI devices
