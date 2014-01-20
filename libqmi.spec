@@ -1,21 +1,20 @@
-%define url_ver %(echo %{version}|cut -d. -f1,2)
-
 %define	oname	qmi
 %define	major	0
-%define libname	%mklibname %{oname}-glib %{major}
-%define devname	%mklibname %{oname}-glib -d
+%define	libname	%mklibname %{oname}-glib %{major}
+%define	devname	%mklibname %{oname}-glib -d
 
 Summary:	Library to control QMI devices
 Name:		libqmi
-Version:	1.0
-Release:	2
+Version:	1.4.0
+Release:	5
 License:	LGPLv2+
-Url:		http://cgit.freedesktop.org/libqmi/
 Group:		System/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libqmi/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		http://cgit.freedesktop.org/libqmi/
+Source0:	http://cgit.freedesktop.org/libqmi/snapshot/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
+BuildRequires:	pkgconfig(gtk-doc)
 
 %description
 A GLib/GIO based library to control QMI devices
@@ -46,6 +45,7 @@ This package contains files required to link sources against libqmi.
 %setup -q
 
 %build
+./autogen.sh
 %configure2_5x \
 	--disable-static
 
