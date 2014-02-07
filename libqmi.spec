@@ -60,6 +60,7 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/
 %{_bindir}/qmi-network
 %{_bindir}/qmicli
 %{_libexecdir}/qmi-proxy
+%{_mandir}/man1/qmi*.1.*
 
 %files -n %{libname}
 %{_libdir}/libqmi-glib.so.%{major}*
