@@ -1,5 +1,5 @@
 %define oname qmi
-%define major 0
+%define major 1
 %define libname %mklibname %{oname}-glib %{major}
 %define devname %mklibname %{oname}-glib -d
 
@@ -14,7 +14,6 @@ Source0:	http://cgit.freedesktop.org/libqmi/snapshot/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
-BuildRequires:	pkgconfig(gtk-doc)
 
 %description
 A GLib/GIO based library to control QMI devices.
