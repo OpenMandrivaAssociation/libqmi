@@ -1,7 +1,7 @@
-%define	oname	qmi
-%define	major	0
-%define	libname	%mklibname %{oname}-glib %{major}
-%define	devname	%mklibname %{oname}-glib -d
+%define oname qmi
+%define major 0
+%define libname %mklibname %{oname}-glib %{major}
+%define devname %mklibname %{oname}-glib -d
 
 Summary:	Library to control QMI devices
 Name:		libqmi
