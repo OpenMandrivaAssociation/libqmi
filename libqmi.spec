@@ -53,9 +53,13 @@ This package contains files required to link sources against libqmi.
 %install
 %makeinstall_std
 
+# (tpg) kill docs
+rm -rf %{buildroot}%{_datadir}/gtk-doc/
+
 %files -n %{oname}-tools
 %{_bindir}/qmi-network
 %{_bindir}/qmicli
+%{_libexecdir}/qmi-proxy
 
 %files -n %{libname}
 %{_libdir}/libqmi-glib.so.%{major}*
