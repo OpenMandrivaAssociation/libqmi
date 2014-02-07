@@ -45,7 +45,6 @@ This package contains files required to link sources against libqmi.
 %setup -q
 
 %build
-./autogen.sh
 %configure2_5x \
 	--disable-static
 
