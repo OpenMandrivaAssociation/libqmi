@@ -2,11 +2,12 @@
 %define major 1
 %define libname %mklibname %{oname}-glib %{major}
 %define devname %mklibname %{oname}-glib -d
+%define debug_package %{nil}
 
 Summary:	Library to control QMI devices
 Name:		libqmi
-Version:	1.8.0
-Release:	3
+Version:	1.10.4
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://cgit.freedesktop.org/libqmi/
@@ -44,9 +45,10 @@ This package contains files required to link sources against libqmi.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
-    --disable-gtk-doc-html
+	--disable-gtk-doc-html \
+	--enable-more-warnings=no
 
 %make
 
