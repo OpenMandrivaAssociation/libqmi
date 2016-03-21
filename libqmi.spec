@@ -1,5 +1,5 @@
 %define oname qmi
-%define major 1
+%define major 5
 %define libname %mklibname %{oname}-glib %{major}
 %define devname %mklibname %{oname}-glib -d
 %define debug_package %{nil}
@@ -29,6 +29,7 @@ This package contains command line tools to manage such devices.
 %package -n %{libname}
 Summary:	Library to control QMI devices
 Group:		System/Libraries
+Obsoletes:	%{mklibname qmi-glib 1} < 1.14.0
 
 %description -n %{libname}
 A GLib/GIO based library to control QMI devices.
