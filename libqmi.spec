@@ -60,6 +60,7 @@ This package contains files required to link sources against libqmi.
 rm -rf %{buildroot}%{_datadir}/gtk-doc/
 
 %files -n %{oname}-tools
+%{_datadir}/bash-completion/completions/qmicli
 %{_bindir}/qmi-network
 %{_bindir}/qmicli
 %{_libexecdir}/qmi-proxy
