@@ -6,7 +6,7 @@
 
 Summary:	Library to control QMI devices
 Name:		libqmi
-Version:	1.14.2
+Version:	1.18.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -62,6 +62,7 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/
 %files -n %{oname}-tools
 %{_datadir}/bash-completion/completions/qmicli
 %{_bindir}/qmi-network
+%{_bindir}/qmi-firmware-update
 %{_bindir}/qmicli
 %{_libexecdir}/qmi-proxy
 %{_mandir}/man1/qmi*.1.*
