@@ -6,7 +6,7 @@
 
 Summary:	Library to control QMI devices
 Name:		libqmi
-Version:	1.22.0
+Version:	1.22.2
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
