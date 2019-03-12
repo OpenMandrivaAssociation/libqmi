@@ -7,7 +7,7 @@
 Summary:	Library to control QMI devices
 Name:		libqmi
 Version:	1.22.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://cgit.freedesktop.org/libqmi/
@@ -16,6 +16,7 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(gudev-1.0) >= 147
+BuildRequires:	pkgconfig(mbim-glib)
 
 %description
 A GLib/GIO based library to control QMI devices.
@@ -44,7 +45,7 @@ Requires:	%{libname} = %{version}
 This package contains files required to link sources against libqmi.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
@@ -52,10 +53,10 @@ This package contains files required to link sources against libqmi.
 	--disable-gtk-doc-html \
 	--enable-more-warnings=no
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # (tpg) kill docs
 rm -rf %{buildroot}%{_datadir}/gtk-doc/
