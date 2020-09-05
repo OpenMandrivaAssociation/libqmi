@@ -4,9 +4,9 @@
 %define devname %mklibname %{oname}-glib -d
 %define debug_package %{nil}
 
-Summary:	Library to control QMI devices
+Summary:	Library to control WWAN modems speaking the QMI (Qualcomm MSM Interface) protocol
 Name:		libqmi
-Version:	1.24.14
+Version:	1.26.4
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(gudev-1.0) >= 147
 BuildRequires:	pkgconfig(mbim-glib)
 
 %description
-A GLib/GIO based library to control QMI devices.
+Library to control WWAN modems speaking the QMI (Qualcomm MSM Interface) protocol
 
 %package -n %{oname}-tools
 Summary:	Helper utilities to control QMI devices
@@ -43,6 +43,14 @@ Requires:	%{libname} = %{version}
 
 %description -n %{devname}
 This package contains files required to link sources against libqmi.
+
+%package gir
+Summary:	GObject Introspection interface to libqmi
+Group:		Development/C
+Requires:	%{libname} = %{version}
+
+%description gir
+GObject Introspection interface to libqmi
 
 %prep
 %autosetup -p1
@@ -76,3 +84,7 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/
 %{_includedir}/libqmi-glib/
 %{_libdir}/libqmi-glib.so
 %{_libdir}/pkgconfig/qmi-glib.pc
+
+%files gir
+%{_libdir}/girepository-1.0/Qmi-1.0.typelib
+%{_datadir}/gir-1.0/Qmi-1.0.gir
