@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(gudev-1.0) >= 147
 BuildRequires:	pkgconfig(mbim-glib)
+BuildRequires:	autoconf-archive
 
 %description
 Library to control WWAN modems speaking the QMI (Qualcomm MSM Interface) protocol
