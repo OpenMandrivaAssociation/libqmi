@@ -49,6 +49,7 @@ This package contains files required to link sources against libqmi.
 Summary:	GObject Introspection interface to libqmi
 Group:		Development/C
 Requires:	%{libname} = %{version}
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
 
 %description gir
 GObject Introspection interface to libqmi
