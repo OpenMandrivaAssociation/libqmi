@@ -1,0 +1,32 @@
+From 2cd28244e81665e013a4672a197ed25b2ec08ee3 Mon Sep 17 00:00:00 2001
+From: Aleksander Morgado <aleksander@aleksander.es>
+Date: Mon, 12 Oct 2020 16:32:47 +0200
+Subject: [PATCH 3/5] libqmi-glib,test-compat-utils: allow building without
+ deprecated symbols
+
+Just a no-op test.
+
+(cherry picked from commit e9926464576c1190e99d7975049bf08ced4c7eb7)
+---
+ src/libqmi-glib/test/test-compat-utils.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/src/libqmi-glib/test/test-compat-utils.c b/src/libqmi-glib/test/test-compat-utils.c
+index 39f0892..2f0ae06 100644
+--- a/src/libqmi-glib/test/test-compat-utils.c
++++ b/src/libqmi-glib/test/test-compat-utils.c
+@@ -1264,4 +1264,11 @@ int main (int argc, char **argv)
+     return g_test_run ();
+ }
+ 
++#else
++
++int main (int argc, char **argv)
++{
++    return 0;
++}
++
+ #endif /* QMI_DISABLE_DEPRECATED */
+-- 
+2.29.2
+

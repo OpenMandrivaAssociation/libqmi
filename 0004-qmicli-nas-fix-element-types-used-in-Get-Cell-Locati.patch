@@ -1,0 +1,56 @@
+From 5cf36cae2ef591815f8e55561a7cad5ecf98a1c2 Mon Sep 17 00:00:00 2001
+From: Aleksander Morgado <aleksander@aleksander.es>
+Date: Mon, 12 Oct 2020 16:35:43 +0200
+Subject: [PATCH 4/5] qmicli,nas: fix element types used in 'Get Cell Location
+ Info' handling
+
+Fixes 84e0bffaff9c6d07569377f04d3ea038620cf58f
+
+(cherry picked from commit 2027e5d09107aa6a2215166708126be0cd534c51)
+---
+ src/qmicli/qmicli-nas.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/qmicli/qmicli-nas.c b/src/qmicli/qmicli-nas.c
+index 662c5ce..cc39c9b 100644
+--- a/src/qmicli/qmicli-nas.c
++++ b/src/qmicli/qmicli-nas.c
+@@ -2826,9 +2826,9 @@ get_cell_location_info_ready (QmiClientNas *client,
+         g_free (plmn);
+ 
+         for (i = 0; i < array->len; i++) {
+-            QmiMessageNasGetCellLocationInfoOutputUmtsInfoCellElement *element;
++            QmiMessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement *element;
+ 
+-            element = &g_array_index (array, QmiMessageNasGetCellLocationInfoOutputUmtsInfoCellElement, i);
++            element = &g_array_index (array, QmiMessageNasGetCellLocationInfoOutputUmtsInfoV2CellElement, i);
+             g_print ("\tCell [%u]:\n"
+                      "\t\tUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"'\n"
+                      "\t\tPrimary Scrambling Code: '%" G_GUINT16_FORMAT"'\n"
+@@ -2842,9 +2842,9 @@ get_cell_location_info_ready (QmiClientNas *client,
+         }
+ 
+         for (i = 0; i < array2->len; i++) {
+-            QmiMessageNasGetCellLocationInfoOutputUmtsInfoNeighboringGeranElement *element;
++            QmiMessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement *element;
+ 
+-            element = &g_array_index (array2, QmiMessageNasGetCellLocationInfoOutputUmtsInfoNeighboringGeranElement, i);
++            element = &g_array_index (array2, QmiMessageNasGetCellLocationInfoOutputUmtsInfoV2NeighboringGeranElement, i);
+             g_print ("\tNeighboring GERAN Cell [%u]:\n"
+                      "\t\tGERAN Absolute RF Channel Number: '%" G_GUINT16_FORMAT"'\n",
+                      i,
+@@ -2935,9 +2935,9 @@ get_cell_location_info_ready (QmiClientNas *client,
+                      s_intra_search_threshold);
+ 
+         for (i = 0; i < array->len; i++) {
+-            QmiMessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoCellElement *element;
++            QmiMessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement *element;
+ 
+-            element = &g_array_index (array, QmiMessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoCellElement, i);
++            element = &g_array_index (array, QmiMessageNasGetCellLocationInfoOutputIntrafrequencyLteInfoV2CellElement, i);
+             g_print ("\tCell [%u]:\n"
+                      "\t\tPhysical Cell ID: '%" G_GUINT16_FORMAT"'\n"
+                      "\t\tRSRQ: '%.1lf' dB\n"
+-- 
+2.29.2
+
