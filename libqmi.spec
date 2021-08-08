@@ -2,22 +2,18 @@
 %define major 5
 %define libname %mklibname %{oname}-glib %{major}
 %define devname %mklibname %{oname}-glib -d
-%define debug_package %{nil}
 
 Summary:	Library to control WWAN modems speaking the QMI (Qualcomm MSM Interface) protocol
 Name:		libqmi
-Version:	1.26.6
-Release:	3
+Version:	1.30.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://cgit.freedesktop.org/libqmi/
 Source0:	http://freedesktop.org/software/%{name}/%{name}-%{version}.tar.xz
 # From upstream git qmi-1-26 branch
 # https://gitlab.freedesktop.org/mobile-broadband/libqmi
-Patch0:		0002-docs-fix-1.26.6-API-section-title.patch
-Patch1:		0003-libqmi-glib-test-compat-utils-allow-building-without.patch
-Patch2:		0004-qmicli-nas-fix-element-types-used-in-Get-Cell-Locati.patch
-Patch3:		0005-collections-basic-add-release-USSD-indication.patch
+# [ currently nothing ]
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
