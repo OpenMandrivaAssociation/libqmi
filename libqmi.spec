@@ -14,6 +14,7 @@ Source0:	https://gitlab.freedesktop.org/mobile-broadband/libqmi/-/archive/%{vers
 #Source0:	http://freedesktop.org/software/%{name}/%{name}-%{version}.tar.xz
 
 BuildRequires:	meson
+BuildRequires:  help2man
 BuildRequires:	pkgconfig(bash-completion)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gio-2.0)
