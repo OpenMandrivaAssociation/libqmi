@@ -5,20 +5,24 @@
 
 Summary:	Library to control WWAN modems speaking the QMI (Qualcomm MSM Interface) protocol
 Name:		libqmi
-Version:	1.30.8
-Release:	2
+Version:	1.32.4
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://cgit.freedesktop.org/libqmi/
-Source0:	http://freedesktop.org/software/%{name}/%{name}-%{version}.tar.xz
-# From upstream git qmi-1-26 branch
-# https://gitlab.freedesktop.org/mobile-broadband/libqmi
-# [ currently nothing ]
+Source0:	https://gitlab.freedesktop.org/mobile-broadband/libqmi/-/archive/%{version}/libqmi-%{version}.tar.bz2
+#Source0:	http://freedesktop.org/software/%{name}/%{name}-%{version}.tar.xz
+
+BuildRequires:	meson
+BuildRequires:  help2man
+BuildRequires:	pkgconfig(bash-completion)
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0) >= 2.32
 BuildRequires:	pkgconfig(gobject-2.0)
 BuildRequires:	pkgconfig(gudev-1.0) >= 147
 BuildRequires:	pkgconfig(mbim-glib)
+BuildRequires:  pkgconfig(qrtr-glib)
 BuildRequires:	autoconf-archive
 
 %description
@@ -60,15 +64,12 @@ GObject Introspection interface to libqmi
 %autosetup -p1
 
 %build
-%configure \
-	--disable-static \
-	--disable-gtk-doc-html \
-	--enable-more-warnings=no
+%meson
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 # (tpg) kill docs
 rm -rf %{buildroot}%{_datadir}/gtk-doc/
