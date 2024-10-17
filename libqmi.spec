@@ -9,7 +9,7 @@ Version:	1.34.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		http://cgit.freedesktop.org/libqmi/
+Url:		https://cgit.freedesktop.org/libqmi/
 Source0:	https://gitlab.freedesktop.org/mobile-broadband/libqmi/-/archive/%{version}/libqmi-%{version}.tar.bz2
 #Source0:	http://freedesktop.org/software/%{name}/%{name}-%{version}.tar.xz
 
