@@ -5,8 +5,8 @@
 
 Summary:	Library to control WWAN modems speaking the QMI (Qualcomm MSM Interface) protocol
 Name:		libqmi
-Version:	1.36.0
-Release:	2
+Version:	1.38.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://cgit.freedesktop.org/libqmi/
